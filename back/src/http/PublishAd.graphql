@@ -1,0 +1,25 @@
+#mutation : Indique que vous effectuez une mutation.
+mutation {
+  #publishAd : Appelle la mutation publishAd définie dans votre resolver.
+  publishAd(
+    #adData : Contient les données de l'annonce que vous souhaitez créer :
+    adData: {
+      title: "Nouvelle annonce"
+      description: "Ceci est une description de l'annonce"
+      price: 100
+      picture: "http://example.com/image.jpg"
+      category: { name: "Autres" }
+    }
+  ) #Bloc de réponse : Spécifie la réponseaprès la création de l'annonce :
+  {
+    id
+    title
+    description
+    price
+    picture
+    category {
+      id
+      name
+    }
+  }
+}

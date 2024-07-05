@@ -1,0 +1,15 @@
+### Requête pour récupérer toutes les annonces
+POST http://localhost:4000
+Content-Type: application/json
+
+{ 
+  "query": "query QueryAllAds { getAllAds { id title category { name }}}"
+}
+
+### Requête pour créer une nouvelle annonce
+POST http://localhost:4000
+Content-Type: application/json
+
+{ 
+  "query": "mutation { publishAd(adData: { title: \"Nouvelle annonce ajoutée\", description: \"Ceci est une description de l'annonce\", price: 100, picture: \"http://example.com/image.jpg\", category: { name: \"Autres\" } }) { id } }"
+}
